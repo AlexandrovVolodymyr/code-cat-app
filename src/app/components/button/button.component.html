@@ -1,0 +1,21 @@
+<button
+  mat-flat-button
+  color="primary"
+  class="button"
+  (click)="onClick()"
+  [ngClass]="{
+    'button--primary': type === Button.Primary,
+    'button--toggle': type === Button.Toggle,
+    'button--secondary': type === Button.Secondary,
+    'button--disabled': type === Button.Disabled
+  }"
+  [disabled]="type === Button.Disabled">
+  <div class="button-container">
+    <span class="button__text">{{ text }}</span>
+    @if (hasIcon) {
+      <svg-icon
+        [class.rotated]="(isOpen$ | async) === false"
+        src="assets/images/arrow-up.svg"></svg-icon>
+    }
+  </div>
+</button>

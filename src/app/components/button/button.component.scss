@@ -1,0 +1,57 @@
+@import '../../../assets/styles/variables';
+
+.button {
+  background-color: transparent !important;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  font-family: $font;
+  height: 2.75rem;
+  direction: rtl;
+  width: 100%;
+
+  &--toggle {
+    border: 1px solid $secondary-color;
+    width: 11.188rem;
+
+    .button__text {
+      color: $primary-text-color;
+    }
+  }
+
+  &--primary {
+    background-color: $primary-color !important;
+  }
+
+  &--secondary {
+    .button__text {
+      color: #6b6e77;
+      text-decoration: underline;
+    }
+  }
+
+  &--disabled {
+    background-color: $disabled-color !important;
+
+    .button__text {
+      color: #6b6e77;
+    }
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    font-size: 1rem;
+  }
+
+  svg-icon {
+    margin-right: 0.5rem;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+}

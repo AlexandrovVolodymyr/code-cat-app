@@ -1,8 +1,21 @@
-html, body {
+@import 'assets/styles/variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: $font !important;
   height: 100%;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+svg-icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
