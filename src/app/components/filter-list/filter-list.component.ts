@@ -15,7 +15,7 @@ import { FilterService } from '../../services/filter.service';
 import { Observable, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { FILTER_LIST } from './filter-list.constant';
-import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
+import { ClickOutsideDirective } from '../../directives/click-outside.directive';
 
 @Component({
   selector: 'app-filter-list',
@@ -27,8 +27,7 @@ import { CdkConnectedOverlay, CdkOverlayOrigin } from '@angular/cdk/overlay';
     SvgIconComponent,
     MatDivider,
     AsyncPipe,
-    CdkConnectedOverlay,
-    CdkOverlayOrigin,
+    ClickOutsideDirective,
   ],
   templateUrl: './filter-list.component.html',
   styleUrl: './filter-list.component.scss',

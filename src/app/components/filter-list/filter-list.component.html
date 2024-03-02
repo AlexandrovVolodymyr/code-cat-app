@@ -2,7 +2,12 @@
   (clickEvent)="toggleFilter()"
   [type]="Button.Toggle"
   [text]="'סטטוס בקשה'"></app-button>
-<div class="filter-container" [hidden]="(isOpen$ | async) === false">
+
+<div
+  class="filter-container"
+  [hidden]="(isOpen$ | async) === false"
+  appClickOutside
+  (clickOutside)="toggleFilter()">
   <ul cdkListbox aria-labelledby="filter-list" class="categories">
     @for (category of categories; track category) {
       <li
@@ -20,12 +25,11 @@
       [hasIcon]="false"
       [text]="'הצגת בקשות'"
       (clickEvent)="addFilter()"></app-button>
-    @if (activeCategory) {
-      <app-button
-        [type]="Button.Secondary"
-        [hasIcon]="false"
-        [text]="'ניקוי בחירה'"
-        (clickEvent)="reset()"></app-button>
-    }
+    <app-button
+      [hidden]="!activeCategory"
+      [type]="Button.Secondary"
+      [hasIcon]="false"
+      [text]="'ניקוי בחירה'"
+      (clickEvent)="reset()"></app-button>
   </div>
 </div>
