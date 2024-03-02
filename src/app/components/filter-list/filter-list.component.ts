@@ -53,6 +53,10 @@ export class FilterListComponent {
     this.filterService.setFilterState(!this.filterService.getFilterState());
   }
 
+  closeFilter(): void {
+    this.filterService.setFilterState(false);
+  }
+
   reset(): void {
     this.listBox.toggleValue(this.activeCategory);
     this.activeCategory = '';
